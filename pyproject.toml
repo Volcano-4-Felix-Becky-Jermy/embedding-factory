@@ -1,0 +1,20 @@
+[project]
+name = "embedding-factory"
+version = "0.1.0"
+description = "Shared embedding helpers for social media vector search"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "langchain_ollama"
+  , "langchain_openai"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

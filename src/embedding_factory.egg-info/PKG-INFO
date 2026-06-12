@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: embedding-factory
+Version: 0.1.0
+Summary: Shared embedding helpers for social media vector search
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: langchain_ollama
+Requires-Dist: langchain_openai

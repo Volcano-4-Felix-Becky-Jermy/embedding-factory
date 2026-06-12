@@ -1,0 +1,8 @@
+pyproject.toml
+src/embedding_factory/__init__.py
+src/embedding_factory/embedding_factory.py
+src/embedding_factory.egg-info/PKG-INFO
+src/embedding_factory.egg-info/SOURCES.txt
+src/embedding_factory.egg-info/dependency_links.txt
+src/embedding_factory.egg-info/requires.txt
+src/embedding_factory.egg-info/top_level.txt

@@ -8,18 +8,18 @@ def get_embedding_model():
     model: model name (optional)
     """
     embedding_llm_provider = os.getenv("EMBEDDING_LLM_PROVIDER", "ollama")
+    model = os.getenv("EMBEDDING_MODEL", "qwen3.5")
 
     if embedding_llm_provider == "ollama":
         from langchain_ollama import OllamaEmbeddings
-
-        model = os.getenv("OLLAMA_MODEL", "qwen3.5")
+   
         return OllamaEmbeddings(model=model)
     elif embedding_llm_provider == "openrouter":
         from langchain_openai import OpenAIEmbeddings
 
         openai_api_key = os.getenv("OPENROUTER_API_KEY")
-        openai_api_base = "https://openrouter.ai/api/v1"
-        model = os.getenv("OPENROUTER_MODEL", "qwen3.5")
+        openai_api_base = os.getenv("OPENROUTER_API_BASE")
+
         return OpenAIEmbeddings(
             model=model,
             api_key=openai_api_key,

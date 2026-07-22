@@ -4,17 +4,17 @@ import os
 def get_embedding_model():
     """
     Factory function to get embedding model.
-    embedding_type: "ollama" or "openai"
+    embedding_llm_provider: "ollama" or "openai"
     model: model name (optional)
     """
-    embedding_type = os.getenv("EMBEDDING_TYPE", "ollama")
+    embedding_llm_provider = os.getenv("EMBEDDING_LLM_PROVIDER", "ollama")
 
-    if embedding_type == "ollama":
+    if embedding_llm_provider == "ollama":
         from langchain_ollama import OllamaEmbeddings
 
         model = os.getenv("OLLAMA_MODEL", "qwen3.5")
         return OllamaEmbeddings(model=model)
-    elif embedding_type == "openrouter":
+    elif embedding_llm_provider == "openrouter":
         from langchain_openai import OpenAIEmbeddings
 
         openai_api_key = os.getenv("OPENROUTER_API_KEY")
